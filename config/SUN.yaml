@@ -1,0 +1,42 @@
+
+
+log_dir: '../log/SUN.log'
+dataset_root: '../dataset'
+dataset_name: 'SUN'
+writer_path: '../runs/SUN'
+device: 'cuda:1'
+k_cluster: 6
+backbone: resnet101
+epoch: 100
+
+lambda_cls_loss: 1.0
+lambda_project_loss: 1.0
+lambda_edge_loss: 0.05
+lambda_contrastive_loss: 0.05
+lambda_margin_loss: 0.7
+margin_dist: 0.5
+
+grad_clip_value: 1.0
+train_batch_size: 128
+test_batch_size: 512
+init_temp: 0.01
+semantic_temperature: 0.01
+visual_temperature: 0.01
+num_workers: 8
+manual_seed: 888
+
+optimizer: 'Adam'
+momentum: 0.000
+alpha: 0.9
+weight_decay: 0.00001
+lr: 0.001
+lr_decay: 0.9
+swa_lr: 0.000001
+swa_annealing_epoch: 20
+swa_annealing_strategy: 'cos'
+gamma: 1.9
+scale: 30.0
+
+visual_feat_num: 2048
+semantic_feat_num: 102
+trans_feat_num: 2048

@@ -1,0 +1,41 @@
+
+
+log_dir: '../log/CUB.log'
+dataset_root: '../dataset'
+dataset_name: 'CUB'
+writer_path: '../runs/CUB'
+device: 'cuda:1'
+k_cluster: 5
+backbone: 'vit-base'
+epoch: 100
+
+lambda_cls_loss: 1.0
+lambda_project_loss: 1.0
+lambda_edge_loss: 1.0
+lambda_contrastive_loss: 0.5
+lambda_margin_loss: 0.1
+margin_dist: 0.2
+
+grad_clip_value: 1.0
+train_batch_size: 160
+test_batch_size: 1024
+init_temp: 0.01
+semantic_temperature: 0.1
+visual_temperature: 0.1
+manual_seed: 888
+
+optimizer: 'Adam'
+momentum: 0.0
+alpha: 0.9
+weight_decay: 0.000001
+lr: 0.001
+lr_decay: 0.9
+swa_lr: 0.0000001
+swa_annealing_strategy: 'cos'
+swa_annealing_epoch: 120
+gamma: 2.0
+scale: 30
+
+visual_feat_num: 2048
+semantic_feat_num: 1024
+trans_feat_num: 2048
